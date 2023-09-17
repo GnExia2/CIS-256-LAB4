@@ -135,22 +135,22 @@ class LinkedList {
     public void mergeSort() {
         // Your code for merge sort here
     }
-}
 
-public static void main(String[] args) {
-    LinkedList productList = new LinkedList();
+    public static void main(String[] args) {
+        LinkedList productList = new LinkedList();
 
-    productList.append(new Products(1, "skis", 3, 600));
-    productList.append(new Products(2, "snowboard", 4, 800));
-    productList.append(new Products(3, "gloves", 3, 50));
-    productList.append(new Products(4, "helmet", 3, 159.99));
-    productList.append(new Products(5, "snowshoes", 2, 149.99));
-    productList.append(new Products(6, "jacket", 1, 349.99));
-    productList.append(new Products(7, "thermal pants", 4, 250));
-    productList.append(new Products(8, "snow goggles", 3, 99.50));
-    productList.append(new Products(9, "thermal shirt", 5, 300));
-    productList.append(new Products(10, "thermal vest", 2, 264.99));
+        productList.append(new Products(1, "skis", 3, 600));
+        productList.append(new Products(2, "snowboard", 4, 800));
+        productList.append(new Products(3, "gloves", 3, 50));
+        productList.append(new Products(4, "helmet", 3, 159.99));
+        productList.append(new Products(5, "snowshoes", 2, 149.99));
+        productList.append(new Products(6, "jacket", 1, 349.99));
+        productList.append(new Products(7, "thermal pants", 4, 250));
+        productList.append(new Products(8, "snow goggles", 3, 99.50));
+        productList.append(new Products(9, "thermal shirt", 5, 300));
+        productList.append(new Products(10, "thermal vest", 2, 264.99));
 
-    // Printing the list
-    productList.printList();
+        // Printing the list
+        productList.printList();
+    }
 }
