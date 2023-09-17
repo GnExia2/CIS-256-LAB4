@@ -1,8 +1,8 @@
 class Products {
-    private int id;
-    private String name;
-    private int quantity;
-    private double price;
+    protected int id;
+    protected String name;
+    protected int quantity;
+    protected double price;
 
     public Products(int id, String name, int quantity, double price) {
         this.id = id;
@@ -29,9 +29,9 @@ class Products {
 }
 
 class Node {
-    private Products data;
-    private Node prev;
-    private Node next;
+    protected Products data;
+    protected Node prev;
+    protected Node next;
 
     // Default constructor
     public Node(Products data) {
@@ -69,8 +69,8 @@ class Node {
 }
 
 class LinkedList {
-    private Node head;
-    private Node tail;
+    protected Node head;
+    protected Node tail;
 
     // Method to insert a new node at the end
     public void append(Products data) {
@@ -132,8 +132,9 @@ class LinkedList {
     }
 
     // Method to sort the list using Merge Sort
-    public void mergeSort() {
+    public void mergeSort(LinkedList myList) {
         // Your code for merge sort here
+        myList = MergeSort.mergeSort(myList);
     }
 
     public static void main(String[] args) {
