@@ -1,4 +1,16 @@
+/**
+ * The MergeSort class provides a static method for performing merge sort on a linked list.
+ * Merge sort is an efficient, comparison-based sorting algorithm that works by dividing the
+ * list into smaller sublists, sorting those sublists, and then merging them back together.
+ */
 public class MergeSort {
+    
+    /**
+     * Sorts a linked list in ascending order using the merge sort algorithm.
+     *
+     * @param list The linked list to be sorted.
+     * @return A new linked list containing the sorted elements.
+     */
     public static LinkedList mergeSort(LinkedList list) {
         if (list.head == null || list.head.next == null) {
             return list; // List is empty or has only one element
@@ -31,6 +43,13 @@ public class MergeSort {
         return merge(left, right);
     }
 
+    /**
+     * Merges two sorted linked lists into a single sorted linked list.
+     *
+     * @param left  The first sorted linked list to be merged.
+     * @param right The second sorted linked list to be merged.
+     * @return A new linked list containing the merged and sorted elements.
+     */
     private static LinkedList merge(LinkedList left, LinkedList right) {
         LinkedList result = new LinkedList(); // Create a new LinkedList for the result
 
