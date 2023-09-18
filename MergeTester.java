@@ -2,10 +2,16 @@ public class MergeTester {
     public static void main(String[] args) {
         // Create a sample linked list with unsorted data
         LinkedList list = new LinkedList();
-        list.append(new Products(3, "Product C", 4, 19.99));
-        list.append(new Products(1, "Product A", 4, 9.99));
-        list.append(new Products(2, "Product B", 3, 15.99));
-        list.append(new Products(4, "Product D", 4, 29.99));
+        list.append(new Products(5, "snowshoes", 2, 149.99));
+        list.append(new Products(6, "jacket", 1, 349.99));
+        list.append(new Products(7, "thermal pants", 4, 250));
+        list.append(new Products(8, "snow goggles", 3, 99.50));
+        list.append(new Products(9, "thermal shirt", 5, 300));
+        list.append(new Products(10, "thermal vest", 2, 264.99));
+        list.append(new Products(1, "skis", 3, 600));
+        list.append(new Products(2, "snowboard", 4, 800));
+        list.append(new Products(3, "gloves", 3, 50));
+        list.append(new Products(4, "helmet", 3, 159.99));
 
         // Print list before
         System.out.println("BEFORE: ");
