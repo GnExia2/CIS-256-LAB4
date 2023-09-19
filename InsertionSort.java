@@ -24,10 +24,6 @@ public class InsertionSort {
 				// loop for smallest
 				//point at first
 				 Node current = list.head;
-
-					list.printList();
-					System.out.println("----");
-				
 					 Node small = list.head;
 					
 				while (current != null) {
@@ -43,7 +39,6 @@ public class InsertionSort {
 				
 				// append smallest and remove node on old list 
 				if (small != null) {
-					System.out.println("Smallest ID found to attempt append: " + small.data.id);
 					sorted.append(small.data);
 					
 					list.delete(small.data);
@@ -70,10 +65,9 @@ public class InsertionSort {
 
 	        System.out.println("BEFORE: ");
 	        list.printList();
-	        System.out.println("*******************");
+			System.out.println();
 	        
 	        list = insertionSort(list);
-	        System.out.println();
 	        
 	        System.out.println("AFTER: ");
 	        list.printList();
