@@ -19,12 +19,12 @@ public class InsertionSort {
 		// empty list
 		 LinkedList sorted = new LinkedList(); 
 		
-		 //point at first
-		 Node current = list.head;
-		
 		//while original list not empty 
 			while (list.head != null) { 
 				// loop for smallest
+				//point at first
+				 Node current = list.head;
+
 					list.printList();
 					System.out.println("----");
 				
@@ -39,7 +39,8 @@ public class InsertionSort {
 					// next node to continue
 					current=current.next;
 				}
-
+				current=list.head;
+				
 				// append smallest and remove node on old list 
 				if (small != null) {
 					System.out.println("Smallest ID found to attempt append: " + small.data.id);
@@ -50,7 +51,8 @@ public class InsertionSort {
 			}
 
 			return sorted;
-		} 
+		}
+	 
 	 
 	 public static void main(String[] args) {
 	        // Create a sample linked list with unsorted data
@@ -70,7 +72,7 @@ public class InsertionSort {
 	        list.printList();
 	        System.out.println("*******************");
 	        
-	        insertionSort(list);
+	        list = insertionSort(list);
 	        System.out.println();
 	        
 	        System.out.println("AFTER: ");
@@ -78,97 +80,3 @@ public class InsertionSort {
   
 	 }
 }
-
-/* Result: 
-BEFORE: 
-5: snowshoes - Quantity: 2, Price: 149.99
-6: jacket - Quantity: 1, Price: 349.99
-7: thermal pants - Quantity: 4, Price: 250.0
-8: snow goggles - Quantity: 3, Price: 99.5
-9: thermal shirt - Quantity: 5, Price: 300.0
-10: thermal vest - Quantity: 2, Price: 264.99
-1: skis - Quantity: 3, Price: 600.0
-2: snowboard - Quantity: 4, Price: 800.0
-3: gloves - Quantity: 3, Price: 50.0
-4: helmet - Quantity: 3, Price: 159.99
-*******************
-5: snowshoes - Quantity: 2, Price: 149.99
-6: jacket - Quantity: 1, Price: 349.99
-7: thermal pants - Quantity: 4, Price: 250.0
-8: snow goggles - Quantity: 3, Price: 99.5
-9: thermal shirt - Quantity: 5, Price: 300.0
-10: thermal vest - Quantity: 2, Price: 264.99
-1: skis - Quantity: 3, Price: 600.0
-2: snowboard - Quantity: 4, Price: 800.0
-3: gloves - Quantity: 3, Price: 50.0
-4: helmet - Quantity: 3, Price: 159.99
-----
-Smallest ID found to attempt append: 1
-5: snowshoes - Quantity: 2, Price: 149.99
-6: jacket - Quantity: 1, Price: 349.99
-7: thermal pants - Quantity: 4, Price: 250.0
-8: snow goggles - Quantity: 3, Price: 99.5
-9: thermal shirt - Quantity: 5, Price: 300.0
-10: thermal vest - Quantity: 2, Price: 264.99
-2: snowboard - Quantity: 4, Price: 800.0
-3: gloves - Quantity: 3, Price: 50.0
-4: helmet - Quantity: 3, Price: 159.99
-----
-Smallest ID found to attempt append: 5
-6: jacket - Quantity: 1, Price: 349.99
-7: thermal pants - Quantity: 4, Price: 250.0
-8: snow goggles - Quantity: 3, Price: 99.5
-9: thermal shirt - Quantity: 5, Price: 300.0
-10: thermal vest - Quantity: 2, Price: 264.99
-2: snowboard - Quantity: 4, Price: 800.0
-3: gloves - Quantity: 3, Price: 50.0
-4: helmet - Quantity: 3, Price: 159.99
-----
-Smallest ID found to attempt append: 6
-7: thermal pants - Quantity: 4, Price: 250.0
-8: snow goggles - Quantity: 3, Price: 99.5
-9: thermal shirt - Quantity: 5, Price: 300.0
-10: thermal vest - Quantity: 2, Price: 264.99
-2: snowboard - Quantity: 4, Price: 800.0
-3: gloves - Quantity: 3, Price: 50.0
-4: helmet - Quantity: 3, Price: 159.99
-----
-Smallest ID found to attempt append: 7
-8: snow goggles - Quantity: 3, Price: 99.5
-9: thermal shirt - Quantity: 5, Price: 300.0
-10: thermal vest - Quantity: 2, Price: 264.99
-2: snowboard - Quantity: 4, Price: 800.0
-3: gloves - Quantity: 3, Price: 50.0
-4: helmet - Quantity: 3, Price: 159.99
-----
-Smallest ID found to attempt append: 8
-9: thermal shirt - Quantity: 5, Price: 300.0
-10: thermal vest - Quantity: 2, Price: 264.99
-2: snowboard - Quantity: 4, Price: 800.0
-3: gloves - Quantity: 3, Price: 50.0
-4: helmet - Quantity: 3, Price: 159.99
-----
-Smallest ID found to attempt append: 9
-10: thermal vest - Quantity: 2, Price: 264.99
-2: snowboard - Quantity: 4, Price: 800.0
-3: gloves - Quantity: 3, Price: 50.0
-4: helmet - Quantity: 3, Price: 159.99
-----
-Smallest ID found to attempt append: 10
-2: snowboard - Quantity: 4, Price: 800.0
-3: gloves - Quantity: 3, Price: 50.0
-4: helmet - Quantity: 3, Price: 159.99
-----
-Smallest ID found to attempt append: 2
-3: gloves - Quantity: 3, Price: 50.0
-4: helmet - Quantity: 3, Price: 159.99
-----
-Smallest ID found to attempt append: 3
-4: helmet - Quantity: 3, Price: 159.99
-----
-Smallest ID found to attempt append: 4
-
-AFTER: 
-The list is empty.
-
-*/
