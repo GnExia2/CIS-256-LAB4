@@ -17,5 +17,5 @@ Your program should accomplish the following:
 Your node class should have two constructors, one default with just data parameter and one with references to previous and next nodes
 
 * Implement two sorting methods to sort the elements of your linked list:
-Insertion sort  
-Merge sort  
+Insertion sort <br />
+Merge sort  <br />
