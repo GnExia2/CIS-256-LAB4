@@ -127,8 +127,9 @@ class LinkedList {
     }
 
     // Method to sort the list using Insertion Sort
-    public void insertionSort() {
+    public void insertionSort(LinkedList list) {
         // Your code for insertion sort here
+        list = InsertionSort.insertionSort(list);
     }
 
     // Method to sort the list using Merge Sort
