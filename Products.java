@@ -1,9 +1,21 @@
+/**
+ * The Products class represents a product with attributes such as ID, name, quantity, and price.
+ * This class is used to encapsulate product information.
+ */
 class Products {
     protected int id;
     protected String name;
     protected int quantity;
     protected double price;
 
+    /**
+     * Constructs a new Products object with the specified attributes.
+     *
+     * @param id       The unique identifier of the product.
+     * @param name     The name of the product.
+     * @param quantity The quantity of the product available.
+     * @param price    The price of the product.
+     */
     public Products(int id, String name, int quantity, double price) {
         this.id = id;
         this.name = name;
@@ -28,19 +40,35 @@ class Products {
     }
 }
 
+/**
+ * The Node class represents a node in a doubly linked list. Each node contains data
+ * of type Products and references to the previous and next nodes in the list.
+ */
 class Node {
     protected Products data;
     protected Node prev;
     protected Node next;
 
-    // Default constructor
+    /**
+     * Constructs a new Node object with the specified product data and initializes
+     * the previous and next references to null.
+     *
+     * @param data The product data to be stored in the node.
+     */
     public Node(Products data) {
         this.data = data;
         this.prev = null;
         this.next = null;
     }
 
-    // Constructor with linked nodes
+    /**
+     * Constructs a new Node object with the specified product data and links it
+     * to the previous and next nodes.
+     *
+     * @param data The product data to be stored in the node.
+     * @param prev The previous node in the list.
+     * @param next The next node in the list.
+     */
     public Node(Products data, Node prev, Node next) {
         this.data = data;
         this.prev = prev;
@@ -68,11 +96,20 @@ class Node {
     }
 }
 
+/**
+ * The LinkedList class represents a doubly linked list of Products. It provides
+ * methods for appending, deleting, printing, and sorting the list using insertion sort
+ * and merge sort algorithms.
+ */
 class LinkedList {
     protected Node head;
     protected Node tail;
 
-    // Method to insert a new node at the end
+    /**
+     * Appends a new product node with the specified data to the end of the linked list.
+     *
+     * @param data The product data to be added to the list.
+     */
     public void append(Products data) {
         Node newNode = new Node(data);
 
@@ -86,7 +123,11 @@ class LinkedList {
         }
     }
 
-    // Method to delete a node with specific data
+    /**
+     * Deletes the first occurrence of a product node with the specified data from the list.
+     *
+     * @param data The product data to be deleted from the list.
+     */
     public void delete(Products data) {
         Node current = head;
 
@@ -110,7 +151,9 @@ class LinkedList {
         }
     }
 
-    // Method to print the list
+    /**
+     * Prints the contents of the linked list, displaying product information for each node.
+     */
     public void printList() {
         Node current = head;
 
@@ -126,33 +169,60 @@ class LinkedList {
         }
     }
 
-    // Method to sort the list using Insertion Sort
-    public void insertionSort(LinkedList list) {
+    /**
+     * Sorts the linked list in ascending order using the insertion sort algorithm.
+     *
+     * @param list The linked list to be sorted.
+     */
+    public static LinkedList insertionSort(LinkedList list) {
         // Your code for insertion sort here
-        list = InsertionSort.insertionSort(list);
+        return InsertionSort.insertionSort(list);
     }
 
-    // Method to sort the list using Merge Sort
-    public void mergeSort(LinkedList myList) {
+    /**
+     * Sorts the linked list in ascending order using the insertion sort algorithm.
+     *
+     * @param list The linked list to be sorted.
+     */
+    public static LinkedList mergeSort(LinkedList myList) {
         // Your code for merge sort here
-        myList = MergeSort.mergeSort(myList);
+        return MergeSort.mergeSort(myList);
     }
 
+    /**
+     * The main method creates a linked list of products, appends products to it,
+     * and prints the list.
+     *
+     * @param args The command-line arguments (unused).
+     */
     public static void main(String[] args) {
         LinkedList productList = new LinkedList();
 
-        productList.append(new Products(1, "skis", 3, 600));
-        productList.append(new Products(2, "snowboard", 4, 800));
-        productList.append(new Products(3, "gloves", 3, 50));
-        productList.append(new Products(4, "helmet", 3, 159.99));
-        productList.append(new Products(5, "snowshoes", 2, 149.99));
         productList.append(new Products(6, "jacket", 1, 349.99));
         productList.append(new Products(7, "thermal pants", 4, 250));
         productList.append(new Products(8, "snow goggles", 3, 99.50));
         productList.append(new Products(9, "thermal shirt", 5, 300));
         productList.append(new Products(10, "thermal vest", 2, 264.99));
+        productList.append(new Products(1, "skis", 3, 600));
+        productList.append(new Products(2, "snowboard", 4, 800));
+        productList.append(new Products(3, "gloves", 3, 50));
+        productList.append(new Products(4, "helmet", 3, 159.99));
+        productList.append(new Products(5, "snowshoes", 2, 149.99));
+
 
         // Printing the list
         productList.printList();
+        
+        boolean sorter = false;
+        if (sorter == true) {
+            productList = mergeSort(productList);
+            System.out.println("MERGE SORT RESULT:");
+            productList.printList();
+        } else {
+            productList = insertionSort(productList);
+            System.out.println("INSERTION SORT RESULT:");
+            productList.printList();
+        }
+
     }
 }
